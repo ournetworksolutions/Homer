@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Link
+Name=Main Node
+Comment=
+Icon=/home/main/Documents/Homer/icon-512.png
+URL=http://10.10.10.10:8081/useip
