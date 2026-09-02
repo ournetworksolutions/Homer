@@ -1,0 +1,1 @@
+Set WshShell = CreateObject("WScript.Shell")WshShell.Run """C:\Homer\OpenHardwareMonitor\OpenHardwareMonitor.exe""", 0, False
