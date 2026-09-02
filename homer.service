@@ -1,0 +1,12 @@
+[Unit]
+Description=Homer
+After=vlan10.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/Homer
+ExecStart=/usr/bin/python3 /opt/Homer/homer.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

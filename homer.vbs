@@ -1,0 +1,1 @@
+Set WshShell = CreateObject("WScript.Shell")WshShell.Run """C:\Homer\homer.bat""", 0, False
