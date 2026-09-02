@@ -1,0 +1,23 @@
+services:
+  music-grabber:
+    image: g33kphr33k/musicgrabber:latest
+    container_name: music-grabber
+    #network_mode: "container:gluetun"
+    #depends_on:
+    #  - gluetun
+    restart: unless-stopped
+
+    # Required for Spotify playlists over 100 tracks (headless browser)
+    shm_size: '2gb'
+    ports:
+      - "8586:8080"
+    volumes:
+      - /run/media/main/Cloud/Music/MusicGrabber:/music
+      - ./data:/data
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - NAVIDROME_URL=http://10.10.10.10:4533
+      - NAVIDROME_USER=NAVIDROME_USER_PUT_HERE
+      - NAVIDROME_PASS=NAVIDROME_PASS_PUT_HERE

@@ -1,0 +1,20 @@
+services:
+  duplicati:
+    image: lscr.io/linuxserver/duplicati:latest
+    container_name: duplicati
+    restart: unless-stopped
+    ports:
+      - "8200:8200"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Athens
+      - SETTINGS_ENCRYPTION_KEY=t4890uj9e4jht94e8ushtjoi4ewuht49wahtr4w98arthe498warthew49i8
+    volumes:
+      # Saves Duplicati's settings, database, and job definitions
+      - ./config:/config
+      
+      # --- SOURCE FOLDER TO BACK UP ---
+      # Replace '/path/to/your/specific/folder' with the actual path on your host.
+      # It will appear inside Duplicati under /source/my_data
+      - /home/main/Documents/Homer/dockers/duplicati/Backup:/source/my_data:rw
