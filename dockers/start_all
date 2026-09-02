@@ -1,0 +1,114 @@
+#!/bin/bash
+echo "Starting docker server stack"
+sleep 1
+echo "Starting seer"
+cd seer_source1
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting prowlarr"
+cd prowlarr_source1
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting radarr"
+cd radarr_source1
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting sonarr"
+cd sonarr_source1
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting seer"
+cd seer_source2
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting prowlarr"
+cd prowlarr_source2
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting radarr"
+cd radarr_source2
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting sonarr"
+cd sonarr_source2
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting unbound"
+cd unbound
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting adguard"
+cd adguard
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting searxng"
+cd searxng
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting speedtest-tracker"
+cd "speedtest-tracker"
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting vaultwarden"
+cd vaultwarden
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting qbittorrent"
+cd qbittorrent
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting navidrome"
+cd navidrome
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting musicgrabber"
+cd musicgrabber
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting filebrowser"
+cd filebrowser
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting wizarr"
+cd "wizarr"
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting nginx"
+cd nginx
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting tailscale"
+cd tailscale
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting duplicati"
+cd duplicati
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Starting portainer"
+cd portainer
+chmod +x start.sh
+./start.sh
+cd ..
+echo "Done"

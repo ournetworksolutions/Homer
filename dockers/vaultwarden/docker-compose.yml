@@ -1,0 +1,27 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - "8687:443"
+
+    environment:
+      # IMPORTANT: change this
+      - ADMIN_TOKEN=YOUR_ADMIN_TOKEN
+
+      # Enable HTTPS (self-signed certs)
+      - ROCKET_TLS={certs="/ssl/tls.crt",key="/ssl/tls.key"}
+
+      # Rocket TLS binding global IP (default Rocket IP binding is 127.0.0.1)
+      - ROCKET_ADDRESS=0.0.0.0
+      - ROCKET_PORT=443
+      - ROCKET_TLS_CERT=/ssl/tls.crt
+      - ROCKET_TLS_KEY=/ssl/tls.key
+
+      # Optional but recommended
+      - SIGNUPS_ALLOWED=true
+
+    volumes:
+      - ./vw-data:/data
+      - ./certs:/ssl

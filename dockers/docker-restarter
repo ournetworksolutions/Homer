@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /home/main/Documents/Homer/dockers
+./stop_all
+sleep 2
+./start_all

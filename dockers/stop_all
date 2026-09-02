@@ -1,0 +1,114 @@
+#!/bin/bash
+echo "Stoping docker server stack"
+sleep 1
+echo "Stoping seer"
+cd seer_source1
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping prowlarr"
+cd prowlarr_source1
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping radarr"
+cd radarr_source1
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping sonarr"
+cd sonarr_source1
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping seer"
+cd seer_source2
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping prowlarr"
+cd prowlarr_source2
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping radarr"
+cd radarr_source2
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping sonarr"
+cd sonarr_source2
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping unbound"
+cd unbound
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping adguard"
+cd adguard
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping searxng"
+cd searxng
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping speedtest-tracker"
+cd "speedtest-tracker"
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping vaultwarden"
+cd vaultwarden
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping qbittorrent"
+cd qbittorrent
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping navidrome"
+cd navidrome
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping musicgrabber"
+cd musicgrabber
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping filebrowser"
+cd filebrowser
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping wizarr"
+cd "wizarr"
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping nginx"
+cd nginx
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping tailscale"
+cd tailscale
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping duplicati"
+cd duplicati
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Stoping portainer"
+cd portainer
+chmod +x stop.sh
+./stop.sh
+cd ..
+echo "Done"
