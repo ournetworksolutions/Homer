@@ -1,0 +1,23 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    container_name: tailscale
+    hostname: tailscale-router
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./tailscale-state:/var/lib/tailscale
+    environment:
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_HOSTNAME=main
+      - TS_AUTHKEY=YOUR_AUTH_KEY
+      - TS_ROUTES=10.10.10.0/24
+      - TS_ACCEPT_DNS=false
+      - TS_USERSPACE=false
+      - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes --operator=main_username
+    restart: unless-stopped
+

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Unbound DNS Root Hints Updater
+Comment=
+Exec=/home/main/Documents/Homer/dockers/unbound/unbound_root_hints.sh
+Icon=network-vpn
+OnlyShowIn=XFCE;
+RunHook=0
+StartupNotify=false
+Terminal=false
+Hidden=false
+
