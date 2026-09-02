@@ -1,0 +1,25 @@
+﻿Rename folders movies and series in ARR Stack.
+
+
+Arguments:
+-i "TORRENT ADDED ITEM IN QBITORRENT"
+-m "MOVIES FOLDER"
+-s "SERIES FOLDER"
+--separate-years [true|false] "When set to true, --separate-years
+appends the release year to the TV series folder name (e.g., Show Name (2024)) so
+that reboots and same-titled shows are kept in separate directories instead of being merged together."
+
+--in-place-rename [true|false] "When set to true, --in-place-rename
+strips Greek text in parentheses directly from the downloaded movie folder
+in its current location without moving any files, but it only triggers
+if no destination movies directory (-m) is provided."
+
+--category "CATEGORY NAME, example: movies, series, radarr, sonarr"
+
+
+
+qBitorrent settings:
+# Run external program on torrent finished
+python3 /config/SeriesRenameARR.py -i "%F" -m "/media/finishedmovies" -s "/media/finishedseries" --separate-years true --category "%L"
+or
+python "C:\Users\Giatrakos\Documents\SeriesRenameARR.py" -i "%F" -s "J:\FinishedSeries" --separate-years true --in-place-rename true --category "%L"
