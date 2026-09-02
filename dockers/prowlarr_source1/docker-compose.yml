@@ -1,0 +1,43 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    ports:
+      - "9696:9696"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DOTNET_SYSTEM_NET_DISABLEIPV6=1
+      - BROWSER_TIMEOUT=120000
+    volumes:
+      - ./prowlarr/config:/config
+    restart: unless-stopped
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    ports:
+      - "8191:8191"
+    environment:
+      - LOG_LEVEL=info
+      - HOST=0.0.0.0
+      - PROXY=socks5://warp:1080
+    restart: unless-stopped
+
+  warp:
+    image: ghcr.io/kingcc/warproxy:latest
+    container_name: warp
+    restart: always
+    ports:
+      # Exposes the SOCKS5 proxy to your local network on port 1080
+      - "10.10.10.10:1080:1080" 
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - SOCKS5_PORT=1080
+      #- DNS=1.1.1.1
+      # Optional: If you have a WARP+ license key, you can enable auto-refresh
+      # - WARP_PLUS=true
+    volumes:
+      # Stores the generated WireGuard keys so you don't get a new IP every time it restarts
+      - ./warp:/config

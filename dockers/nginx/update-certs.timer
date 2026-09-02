@@ -1,0 +1,15 @@
+[Unit]
+Description=Timer for SSL Certificate Update (Every 2.5 months)
+
+[Timer]
+# Group 1: Runs at 3:00 AM on the 1st of January, June, and November
+OnCalendar=*-01,06,11-01 03:00:00
+
+# Group 2: Runs at 3:00 AM on the 15th of March and August
+OnCalendar=*-03,08-15 03:00:00
+
+# If the server is offline during a scheduled run, execute it immediately on next boot
+Persistent=true
+
+[Install]
+WantedBy=timers.target

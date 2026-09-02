@@ -1,0 +1,9 @@
+version: "2"
+authtoken: YOUR_AUTH_TOKEN
+tunnels:
+  cloud:
+    proto: http
+    addr: http://10.10.10.10:8182
+    host_header: localhost
+    schemes: [https]
+

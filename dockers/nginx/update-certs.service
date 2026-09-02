@@ -1,0 +1,14 @@
+[Unit]
+Description=Automated SSL Certificate Update (mkcert & Tailscale)
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+# This runs natively as root. Make sure this path is exactly where your script lives!
+WorkingDirectory=/home/main/Documents/Homer/dockers/nginx/
+ExecStart=/home/main/Documents/Homer/dockers/nginx/update-certs.sh
+
+# This sends all your script's "echo" outputs directly to the central systemd journal
+StandardOutput=journal
+StandardError=journal

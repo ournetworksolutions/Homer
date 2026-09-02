@@ -1,0 +1,14 @@
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr2
+    ports:
+      - "9797:9696"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - DOTNET_SYSTEM_NET_DISABLEIPV6=1
+      - BROWSER_TIMEOUT=120000
+    volumes:
+      - ./prowlarr/config:/config
+    restart: unless-stopped

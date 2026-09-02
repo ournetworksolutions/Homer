@@ -1,0 +1,17 @@
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+      # --- RustDesk Nginx Proxy Forward Ports ---
+      - '22222:22222/tcp'
+      - '22222:22222/udp'
+    dns:
+      - 10.10.10.10 
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
